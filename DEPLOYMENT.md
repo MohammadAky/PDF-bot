@@ -22,9 +22,12 @@ This guide explains how to deploy the PDF Bot to various hosting platforms.
 #### 2. Configure Build Settings
 
 ```
+Runtime: Python 3 (or specify Python 3.11)
 Build Command: pip install -r requirements.txt
 Start Command: python main.py
 ```
+
+**Note**: If you encounter Pillow build errors, Render may be using Python 3.13 which has compatibility issues. The project includes a `.python-version` file set to Python 3.11 for better compatibility.
 
 #### 3. Environment Variables
 
