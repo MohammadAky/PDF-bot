@@ -32,6 +32,7 @@ logger = logging.getLogger(__name__)
 # Global variables
 application = None
 flask_app = Flask(__name__)
+loop = None
 
 
 def create_application():
@@ -85,7 +86,9 @@ def health_check():
 @flask_app.route(WEBHOOK_PATH, methods=['POST'])
 def webhook():
     """Webhook endpoint for Telegram updates"""
-    if not application:
+    global loop
+
+    if not application or not loop:
         return {"error": "Bot not initialized"}, 500
 
     try:
@@ -98,7 +101,7 @@ def webhook():
         update = Update.de_json(update_data, application.bot)
 
         # Process the update asynchronously
-        asyncio.run(process_update(update))
+        asyncio.run_coroutine_threadsafe(process_update(update), loop)
 
         return {"status": "ok"}
 
@@ -126,7 +129,7 @@ def run_flask():
 
 async def run_webhook():
     """Run the bot with webhook"""
-    global application
+    global application, loop
 
     if not WEBHOOK_URL:
         logger.error("WEBHOOK_URL not set! Please set it in environment variables")
@@ -135,6 +138,11 @@ async def run_webhook():
     app = create_application()
     if not app:
         return
+
+    # Initialize the application
+    await app.initialize()
+    application = app  # Set the global application
+    loop = asyncio.get_event_loop()  # Set the global loop
 
     # Set webhook
     webhook_full_url = f"{WEBHOOK_URL.rstrip('/')}{WEBHOOK_PATH}"

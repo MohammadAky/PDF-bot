@@ -13,7 +13,7 @@ services:
       - key: SUPPORT_USERNAME
         sync: false
       - key: WEBHOOK_URL
-        sync: false  # You'll need to set this manually to https://your-app-name.onrender.com
+        sync: false # You'll need to set this manually to https://your-app-name.onrender.com
       - key: WEBHOOK_PATH
         value: /webhook
       - key: PORT
