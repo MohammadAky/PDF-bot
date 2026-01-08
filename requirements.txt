@@ -1,0 +1,48 @@
+# Core Dependencies (REQUIRED)
+python-telegram-bot==20.7
+python-dotenv==1.0.0
+
+# PDF Processing (REQUIRED)
+PyPDF2==3.0.1
+pypdf==3.17.4
+Pillow==10.1.0
+
+# Document Conversion (REQUIRED for basic features)
+fpdf==1.7.2
+
+# Optional but Recommended
+# Uncomment these as needed:
+
+# For better PDF processing
+# PyMuPDF==1.23.8
+
+# For watermarks and page numbers
+# reportlab==4.0.7
+
+# For advanced PDF operations
+# pikepdf==8.10.1
+
+# For Word documents
+# python-docx==1.1.0
+# docx2pdf==0.1.8
+
+# For Excel/CSV
+# openpyxl==3.1.2
+# pandas==2.1.4
+
+# For PDF to images
+# pdf2image==1.16.3
+
+# For OCR
+# pytesseract==0.3.10
+# ocrmypdf==15.4.4
+
+# For PDF to Word
+# pdf2docx==0.5.6
+
+# For table extraction
+# pdfplumber==0.10.3
+
+# For HTML to PDF
+# pdfkit==1.0.0
+# weasyprint==60.1

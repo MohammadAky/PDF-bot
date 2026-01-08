@@ -1,0 +1,104 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Data files
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# PDF files (temporary)
+*.pdf
+*.PDF
+
+# Image files (temporary)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# Document files (temporary)
+*.docx
+*.xlsx
+*.pptx
+*.doc
+*.xls
+*.ppt
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Distribution
+*.egg
+*.whl
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Keep directory structure
+!temp/.gitkeep
+!logs/.gitkeep
+!data/.gitkeep
