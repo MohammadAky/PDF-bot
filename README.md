@@ -382,6 +382,23 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
+## 🚀 Deployment
+
+The bot supports multiple deployment options. For detailed instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+### Quick Deploy Options
+
+- **Render** (Free): Webhook-based deployment with auto-scaling
+- **Railway**: Similar to Render with Python support
+- **Heroku**: Traditional PaaS deployment
+- **VPS**: Full control with polling mode
+
+### Environment Setup
+
+1. Copy `.env.example` to `.env`
+2. Fill in your bot token and configuration
+3. For production, set `USE_WEBHOOK=true`
+
 ## 💻 System Requirements
 
 - **Operating System**: Linux, macOS, or Windows

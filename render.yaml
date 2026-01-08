@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: pdf-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: SUPPORT_USERNAME
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: WEBHOOK_PATH
+        fromService:
+          type: web
+          name: pdf-bot
+          property: host
+      - key: PORT
+        fromService:
+          type: web
+          name: pdf-bot
+          property: port
+      - key: USE_WEBHOOK
+        value: true
+      - key: MAX_FILE_SIZE_MB
+        value: 50
+      - key: MAX_IMAGES_PER_PDF
+        value: 100
+      - key: MAX_PDFS_TO_MERGE
+        value: 20
+      - key: OCR_ENABLED
+        value: false
+      - key: RATE_LIMIT_ENABLED
+        value: false
+      - key: MAX_OPERATIONS_PER_HOUR
+        value: 50

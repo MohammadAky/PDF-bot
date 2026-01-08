@@ -17,6 +17,12 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_IDS = [int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()]
 SUPPORT_USERNAME = os.getenv("SUPPORT_USERNAME", "YourSupportUsername")
 
+# Webhook Configuration (for hosting on Render)
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # Your Render app URL (e.g., https://your-app.onrender.com)
+WEBHOOK_PATH = os.getenv("WEBHOOK_PATH", "/webhook")  # Webhook endpoint path
+PORT = int(os.getenv("PORT", "10000"))  # Port for the web server (Render provides this)
+USE_WEBHOOK = os.getenv("USE_WEBHOOK", "false").lower() == "true"  # Set to true for production
+
 # File Settings
 MAX_FILE_SIZE_MB = int(os.getenv("MAX_FILE_SIZE_MB", "50"))
 MAX_IMAGES_PER_PDF = int(os.getenv("MAX_IMAGES_PER_PDF", "100"))

@@ -1,6 +1,7 @@
 # Core Dependencies (REQUIRED)
 python-telegram-bot==20.7
 python-dotenv==1.0.0
+flask==3.0.0
 
 # PDF Processing (REQUIRED)
 PyPDF2==3.0.1
