@@ -13,12 +13,9 @@ services:
       - key: SUPPORT_USERNAME
         sync: false
       - key: WEBHOOK_URL
-        sync: false
+        sync: false  # You'll need to set this manually to https://your-app-name.onrender.com
       - key: WEBHOOK_PATH
-        fromService:
-          type: web
-          name: pdf-bot
-          property: host
+        value: /webhook
       - key: PORT
         fromService:
           type: web

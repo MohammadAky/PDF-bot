@@ -35,13 +35,15 @@ Add these environment variables in Render:
 
 ```
 BOT_TOKEN=your_telegram_bot_token_here
-ADMIN_IDS=123456789,987654321
-SUPPORT_USERNAME=YourSupportUsername
-WEBHOOK_URL=https://your-app-name.onrender.com
+ADMIN_IDS=123456789,987654321  # Optional
+SUPPORT_USERNAME=YourSupportUsername  # Optional
+WEBHOOK_URL=https://your-app-name.onrender.com  # IMPORTANT: Replace with your actual Render URL
 WEBHOOK_PATH=/webhook
 PORT=10000
 USE_WEBHOOK=true
 ```
+
+**Important**: After deployment, copy your Render service URL (e.g., `https://pdf-bot-xyz.onrender.com`) and update the `WEBHOOK_URL` environment variable, then redeploy.
 
 **Important**: Replace `your-app-name` with your actual Render app name.
 
